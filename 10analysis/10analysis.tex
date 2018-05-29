@@ -1,0 +1,54 @@
+
+\documentclass[letterpaper, reqno,11pt]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{color,latexsym,amsmath,amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newdimen\R
+\R=0.8cm
+\pagestyle{fancy}
+\lhead{Analysis of Algorithms Exercises 1}
+\rhead{Yuchong Pan}
+\begin{document}
+\pagenumbering{arabic}
+\title{Analysis of Algorithms Exercises 1}
+\author{Yuchong Pan}
+\date{\today}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{defn}{Definition}[section]
+\maketitle
+%
+
+\noindent {\bf Exercise 1.14} Multiply by $N$:
+\begin{equation*}
+    NA_N=N+2\sum_{1\leq j\leq N}A_{j-1}\quad{\rm for}\ N>0.
+\end{equation*}
+Subtract the same formula for $N-1$ to eliminate the sum:
+\begin{equation*}
+    NA_N-(N-1)A_{N-1}=1+2A_{N-1}\quad{\rm for}\ N>1.
+\end{equation*}
+Then rearrange terms to get a simple recurrence
+\begin{equation*}
+    NA_N=(N+1)A_{N-1}+1\quad{\rm for}\ N>1.
+\end{equation*}
+This can be solved by dividing both sides by $N(N+1)$:
+\begin{equation*}
+    \frac{A_N}{N+1}=\frac{A_{N-1}}{N}+\frac{1}{N(N+1)}\quad{\rm for}\ N>1.
+\end{equation*}
+Iterating, we are left with the sum
+\begin{equation*}
+    \frac{A_N}{N+1}=\frac{A_1}{2}+\sum_{2\leq i\leq N}\frac{1}{N(N+1)}\quad{\rm for}\ N>1.
+\end{equation*}
+Since $A_1=1$, then
+\begin{equation*}
+    \frac{A_N}{N+1}=\frac{1}{2}+\sum_{2\leq i\leq N}\frac{1}{N(N+1)}=\frac{N}{N+1}\quad{\rm for}\ N>1.
+\end{equation*}
+Hence,
+\begin{equation*}
+    A_N=N\quad{\rm for}\ N>0.
+\end{equation*}
+
+\end{document}
