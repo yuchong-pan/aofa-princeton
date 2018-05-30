@@ -18,8 +18,6 @@ public class QuickSeq implements Sequence {
     public static void main(String[] args) {
         int maxN = Integer.parseInt(args[0]);
         QuickSeq c = new QuickSeq(maxN);
-        for (int i = 0; i <= maxN; i++) {
-            StdOut.println(c.eval(i));
-        }
+        Values.show(c, maxN);
     }
 }
