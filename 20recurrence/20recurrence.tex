@@ -1,0 +1,42 @@
+
+\documentclass[letterpaper, reqno,11pt]{article}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{color,latexsym,amsmath,amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\newdimen\R
+\R=0.8cm
+\pagestyle{fancy}
+\lhead{Analysis of Algorithms Exercises 2}
+\rhead{Yuchong Pan}
+\begin{document}
+\pagenumbering{arabic}
+\title{Analysis of Algorithms Exercises 2}
+\author{Yuchong Pan}
+\date{\today}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{defn}{Definition}[section]
+\maketitle
+%
+
+\noindent {\bf Exercise 2.17} Simplifying the right-hand side, we have
+\begin{equation*}
+    A_N=\frac{N-6}{N}A_{N-1}+2
+\end{equation*}
+Multiplying both sides by $N(N-1)\cdots (N-5)$,
+\begin{equation*}
+    N(N-1)\cdots (N-5)A_N=(N-1)(N-2)\cdots (N-6)A_{N-1}+2N(N-1)\cdots (N-5)
+\end{equation*}
+Iterating, we have
+\begin{equation*}
+    N(N-1)\cdots (N-5)A_N=2\sum_{6\leq j\leq N}j(j-1)\cdots (j-5)
+\end{equation*}
+Simplifying, we have
+\begin{equation*}
+    A_N=\frac{2}{N(N-1)\cdots (N-5)}\sum_{6\leq j\leq N}j(j-1)\cdots (j-5)
+\end{equation*}
+
+\end{document}
